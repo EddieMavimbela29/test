@@ -1,0 +1,94 @@
+<%- include('partials/header.ejs') %>
+
+    <!-- Page Title -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-lg-7">
+                    <h2>Contact</h2>
+                </div>
+
+                <div class="col-md-6 col-lg-5">
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Title -->
+    <section id="consultation" class="section feature feature-2 bg-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-6">
+                    <div class="feature-panel">
+                        <div class="feature-content">
+                            <h3>Get in touch</h3>
+                            <p class="mb-30">We welcome any inquiry, Once you submit the request, our office will attend your question within one business day to provide helpful answers.</p>
+                            <ul>
+                                <li>Explain your health concerns.</li>
+                                <li>A Specialist will answer your questions.</li>
+                                <li>Find out about the our Medical Practice dynamics.</li>
+                                <li>Follow up your medical condition.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-6 ">
+                    <div class="form-wrapper">
+                        <div class="container">
+                            <% if(error && error.length > 0){ %>
+                                <div class="alert alert-danger" role="alert">
+                                    <%= error %>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                     <span aria-hidden="true">&times;</span>
+                                
+                                  </div>
+                                <% } %>
+                              <!-- ALERT ALL SUCCESS AND ERRORS-->
+                                <% if(success && success.length > 0){ %>
+                                  <div class="alert alert-success" role="alert" >
+                                    <%= success %>
+                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                   
+                                  </div>
+                                <% } %>
+                        
+                              </div>
+                            <div class="heading">
+                                <h3 class="heading-title">Send Message to our Practice </h3>
+                            </div>
+
+                            <form action="/contact" method="POST" class="contactForm mb-0">
+                                <div id="result" class="contact-result"></div>
+                                <div class="form-group">
+                                    <label for="name">Your Email*</label>
+                                    <input type="email" class="form-control" name="email" id="email" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Subject*</label>
+                                    <input type="text" class="form-control" name="subject" id="subject" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label for="name">Message</label>
+                                    <textarea class="form-control" name="text" id="text" cols="35" rows="2" required="required"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Send Message" name="submit" class="btn btn--primary btn--block">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <%- include('partials/footer.ejs') %>
